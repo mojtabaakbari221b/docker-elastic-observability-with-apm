@@ -34,8 +34,13 @@ Based on [elastdocker](https://github.com/sherifabdlnaby/elastdocker)
 
 1. Clone the Repository
      ```bash
-     git clone https://github.com/lizozom/docker-elastic-observability-with-apm.git
+     git clone $ADDR_OF_GIT
      ```
+then, copy from .env.sample
+     ```bash
+     cp .env.sample .env
+     ```
+and change ELASTIC_PASSWORD and ELASTIC_APM_SECRET_TOKEN.
 2. Initialize Elasticsearch Keystore and TLS Self-Signed Certificates
     ```bash
     $ make setup
