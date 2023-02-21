@@ -34,27 +34,26 @@ Based on [elastdocker](https://github.com/sherifabdlnaby/elastdocker)
 
 1. Clone the Repository
      ```bash
-     git clone $ADDR_OF_GIT
+     git clone $ADDR
      ```
-then, copy from .env.sample
-     ```bash
-     cp .env.sample .env
-     ```
-and change ELASTIC_PASSWORD and ELASTIC_APM_SECRET_TOKEN.
-2. Initialize Elasticsearch Keystore and TLS Self-Signed Certificates
+2. copy from .env.sample and change ELASTIC_PASSWORD and ELASTIC_APM_SECRET_TOKEN .
+    ```bash
+    $ cp .env.sample .env
+    ```
+3. Initialize Elasticsearch Keystore and TLS Self-Signed Certificates
     ```bash
     $ make setup
     ```
     > **For Linux's docker hosts only**. By default virtual memory [is not enough](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html) so run the next command as root `sysctl -w vm.max_map_count=262144`
-3. Start Elastic Stack
+4. Start Elastic Stack
     ```bash
     $ make elk           <OR>         $ docker-compose up -d		<OR>		$ docker compose up -d
     ```
-4. Navigate to the web application at [http://localhost:3000/](http://localhost:3000) to generate APM traces.
+5. Navigate to the web application at [http://localhost:3000/](http://localhost:3000) to generate APM traces.
     ![image](https://user-images.githubusercontent.com/3016806/209701428-19a257ca-1b30-4f53-bb80-efd6434259d7.png)
 
 
-5. Visit Kibana at [https://localhost:5601/app/apm](https://localhost:5601/app/apm) to see the APM traces from our `webapp`
+6. Visit Kibana at [https://localhost:5601/app/apm](https://localhost:5601/app/apm) to see the APM traces from our `webapp`
 
     Default Username: `elastic`, Password: `changeme`
     
