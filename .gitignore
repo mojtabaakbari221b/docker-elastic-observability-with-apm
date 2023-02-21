@@ -3,3 +3,4 @@
 /secrets
 tools/elastalert/rules/*
 settings.json
+.env
