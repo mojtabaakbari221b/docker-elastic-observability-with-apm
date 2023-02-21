@@ -1,10 +1,7 @@
 <h2 align="center">Observability with Elasticsearch</h2>
-<h4 align="center">APM Node.js and APM RUM agents on <b>Docker</b></h4>
-
-<p align="center"><img src="https://user-images.githubusercontent.com/3016806/209703662-d63a9a32-18cd-4041-8a1e-eec401f708b5.png"></p>
 
 # Introduction
-Elastic Stack (**ELK**) Docker Composition, with a Node.JS application reporting APM client + server side metrics and traces to APM Server.
+Elastic Stack (**ELK**) Docker Composition, reporting APM client + server side metrics and traces to APM Server.
 
 Suitable for Demoing and MVPs.
 
@@ -15,7 +12,6 @@ Based on [elastdocker](https://github.com/sherifabdlnaby/elastdocker)
 
 ### Main Features 📜
 
-- Node.JS application with Node APM Agent.
 - Elasticsearch, configured as a Production Single Node Cluster.
 - Security Enabled on Elasticsearch and Kibana.
 - APM Server receives *Non secure* connections.
@@ -49,11 +45,9 @@ Based on [elastdocker](https://github.com/sherifabdlnaby/elastdocker)
     ```bash
     $ make elk           <OR>         $ docker-compose up -d		<OR>		$ docker compose up -d
     ```
-5. Navigate to the web application at [http://localhost:3000/](http://localhost:3000) to generate APM traces.
-    ![image](https://user-images.githubusercontent.com/3016806/209701428-19a257ca-1b30-4f53-bb80-efd6434259d7.png)
 
 
-6. Visit Kibana at [https://localhost:5601/app/apm](https://localhost:5601/app/apm) to see the APM traces from our `webapp`
+5. Visit Kibana at [https://localhost:5601/app/apm](https://localhost:5601/app/apm) to see the APM traces from our `webapp`
 
     Default Username: `elastic`, Password: `changeme`
     
