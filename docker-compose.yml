@@ -124,4 +124,3 @@ services:
         target: /certs/apm-server.key
     depends_on: 
       - elasticsearch
-      - kibana
