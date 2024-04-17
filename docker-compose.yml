@@ -61,8 +61,8 @@ services:
       - source: elasticsearch.key
         target: /usr/share/elasticsearch/config/certs/elasticsearch.key
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
     ulimits:
       memlock:
         soft: -1
@@ -96,7 +96,7 @@ services:
       - source: kibana.key
         target: /certs/kibana.key
     ports:
-      - "5601:5601"
+      - "127.0.0.1:5601:5601"
 
   apm-server:
     image: elastdocker/apm-server:${ELK_VERSION}
@@ -106,7 +106,7 @@ services:
         ELK_VERSION: $ELK_VERSION
     restart: unless-stopped
     ports:
-      - "8200:8200"
+      - "127.0.0.1:8200:8200"
     volumes:
       - ./apm-server/config/apm-server.yml:/usr/share/apm-server/apm-server.yml:ro
     environment:
